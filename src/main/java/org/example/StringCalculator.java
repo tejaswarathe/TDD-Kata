@@ -8,8 +8,10 @@ public class StringCalculator {
         if (delimiterProvided(number)) {
             this.regex = "[\n" + number.charAt(2) + "]";
         }
+
         String[] split = number.split(regex);
         StringBuilder sb = new StringBuilder();
+
         int res = 0;
         for (int i = 0; i < split.length; i++) {
             if (delimiterProvided(number) && i == 0) {
@@ -21,10 +23,12 @@ public class StringCalculator {
             }
             res += num;
         }
+
         if (!sb.isEmpty()) {
             sb.deleteCharAt(sb.length() - 1);
             throw new IllegalArgumentException("Negative numbers not allowed: " + sb);
         }
+
         return res;
     }
 
