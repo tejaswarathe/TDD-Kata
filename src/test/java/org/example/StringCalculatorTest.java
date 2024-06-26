@@ -1,7 +1,9 @@
-import org.example.StringCalculator;
+package org.example;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTest {
 
@@ -14,6 +16,7 @@ public class StringCalculatorTest {
         assertEquals(5, stringCalculator.add("1\n4"));
         assertEquals(11, stringCalculator.add("//;1\n4;3;3"));
         assertEquals(17, stringCalculator.add("//.1\n4.4.8"));
+        assertThrows(IllegalArgumentException.class, () -> stringCalculator.add("//.1\n4.-4.8"));
     }
 
 }
