@@ -10,5 +10,7 @@ public class StringCalculatorTest {
     @Test
     void addTest() {
         assertEquals(2, stringCalculator.add("1,1"));
+        assertEquals(0, stringCalculator.add(","));
     }
+
 }
